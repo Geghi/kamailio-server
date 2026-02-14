@@ -50,6 +50,7 @@ docker compose ps
 
 ## Notes
 
-- Kamailio accepts `INVITE`, calls your webhook, injects clinic headers, then forwards to ElevenLabs:
-  `sip:sip.rtc.elevenlabs.io:5060;transport=tcp`
+- Kamailio accepts `INVITE`, calls your webhook, injects clinic headers, then forwards to Vapi.
+- Upstream target is configured in `kamailio.cfg` via:
+  `#!define UPSTREAM_URI "sip:sip.vapi.ai:5060;transport=tcp"`
 - If webhook fails, defaults are used (`DEFAULT_CLINIC_ID`, `DEFAULT_CLINIC_NAME` in `kamailio.cfg`).
