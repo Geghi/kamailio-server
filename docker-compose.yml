@@ -1,0 +1,8 @@
+services:
+  kamailio:
+    build: .
+    container_name: kamailio
+    ports:
+      - "5060:5060/tcp"
+    restart: unless-stopped
+    command: ["kamailio", "-DD", "-E", "-f", "/etc/kamailio/kamailio.cfg"]
