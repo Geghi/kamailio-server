@@ -29,6 +29,25 @@ Set DIDWW destination to your VPS:
 docker compose down
 ```
 
+## Keep It Always Running
+
+Use container restart policy (already set in `docker-compose.yml`):
+
+`restart: unless-stopped`
+
+Also ensure Docker starts on boot:
+
+```bash
+sudo systemctl enable docker
+sudo systemctl start docker
+```
+
+Quick verification after reboot:
+
+```bash
+docker compose ps
+```
+
 ## Notes
 
 - Kamailio accepts `INVITE`, calls your webhook, injects clinic headers, then forwards to ElevenLabs:
