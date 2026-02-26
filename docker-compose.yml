@@ -4,5 +4,6 @@ services:
     container_name: kamailio
     ports:
       - "5060:5060/tcp"
+      - "5060:5060/udp"
     restart: unless-stopped
     command: ["kamailio", "-DD", "-E", "-f", "/etc/kamailio/kamailio.cfg"]
