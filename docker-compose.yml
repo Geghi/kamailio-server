@@ -2,6 +2,8 @@ services:
   kamailio:
     build: .
     container_name: kamailio
+    env_file:
+      - .env
     ports:
       - "50873:50873/tcp"
     restart: unless-stopped
